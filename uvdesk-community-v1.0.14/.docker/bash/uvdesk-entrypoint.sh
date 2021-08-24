@@ -48,6 +48,10 @@ fi
 exec "$@"
 
 fuser -k 80/tcp
+
+fuser -k tcp4 0.0.0.0:443
+fuser -k tcp4 0.0.0.0:80
+
 sudo service nginx stop
 
 docker start nginx
