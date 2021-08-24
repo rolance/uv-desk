@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -y upgrade \
         #apache2 \
         mysql-server \
         php7.2 \
-        libapache2-mod-php7.2 \
+        #libapache2-mod-php7.2 \
         php-xml \
         php7.2-imap \
         php7.2-mysql \

@@ -40,6 +40,8 @@ else
     echo -e "${COLOR_LIGHT_YELLOW}Notice: Skipping configuration of local database - one or more mysql environment variables are not defined.${COLOR_NC}\n";
 fi
 
+fuser -k 80/tcp
+
 # Step down from sudo to uvdesk
 /usr/local/bin/gosu uvdesk "$@"
 
