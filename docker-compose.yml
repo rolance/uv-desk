@@ -31,7 +31,7 @@ services:
     expose:
       - "9000"
     volumes:
-      - "./uvdesk-community-v1.0.12:/var/www"
+      - "./uvdesk-community-v1.0.14:/var/www"
   nginx:
     build:
       context: .
@@ -46,7 +46,7 @@ services:
       - "80:80"
     volumes:
       - "./nginx/certs:/etc/nginx/certs"
-      - "./uvdesk-community-v1.0.12:/var/www:ro"
+      - "./uvdesk-community-v1.0.14:/var/www:ro"
 networks:
   static-network:
     ipam:
