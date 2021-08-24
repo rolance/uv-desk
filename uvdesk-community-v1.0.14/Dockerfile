@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y upgrade \
         wget \
         git \
         unzip \
-        apache2 \
+        #apache2 \
         mysql-server \
         php7.2 \
         libapache2-mod-php7.2 \
@@ -28,15 +28,15 @@ RUN apt-get update && apt-get -y upgrade \
 		apt-get install -y --no-install-recommends gnupg-curl; \
 	fi;
 
-COPY ./.docker/config/apache2/env /etc/apache2/envvars
-COPY ./.docker/config/apache2/httpd.conf /etc/apache2/apache2.conf
-COPY ./.docker/config/apache2/vhost.conf /etc/apache2/sites-available/000-default.conf
+#COPY ./.docker/config/apache2/env /etc/apache2/envvars
+#COPY ./.docker/config/apache2/httpd.conf /etc/apache2/apache2.conf
+#COPY ./.docker/config/apache2/vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY ./.docker/bash/uvdesk-entrypoint.sh /usr/local/bin/
 COPY . /var/www/uvdesk/
 
 RUN \
     # Update apache configurations
-    a2enmod php7.2 rewrite; \
+    #a2enmod php7.2 rewrite; \
     chmod +x /usr/local/bin/uvdesk-entrypoint.sh; \
     # Install gosu for stepping-down from root to a non-privileged user during container startup
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \

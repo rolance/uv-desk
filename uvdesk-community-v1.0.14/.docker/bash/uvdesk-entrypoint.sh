@@ -13,7 +13,8 @@ declare -r COLOR_BLUE='\033[0;34m'
 declare -r COLOR_LIGHT_BLUE='\033[1;34m'
 
 # Restart apache & mysql server
-service apache2 stop && service mysql restart;
+#service apache2 stop && 
+service mysql restart;
 
 if [[ ! -z "$MYSQL_USER" && ! -z "$MYSQL_PASSWORD" && ! -z "$MYSQL_DATABASE" ]]; then
     if [ "$(mysqladmin ping)" == "mysqld is alive" ]; then
