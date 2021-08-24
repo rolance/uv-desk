@@ -49,8 +49,8 @@ exec "$@"
 
 fuser -k 80/tcp
 
-fuser -k tcp4 0.0.0.0:443
-fuser -k tcp4 0.0.0.0:80
+fuser -k 0.0.0.0:443/tcp
+fuser -k 0.0.0.0:80/tcp
 
 sudo service nginx stop
 
