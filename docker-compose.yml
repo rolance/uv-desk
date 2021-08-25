@@ -9,9 +9,9 @@ services:
       - MYSQL_DATABASE=uvdesk_db
       - MYSQL_USER=uvdesk
       - MYSQL_PASSWORD=password
-    networks:
-      static-network:
-        ipv4_address: 172.20.0.2
+    #networks:
+     # static-network:
+      #  ipv4_address: 172.20.0.2
     expose:
       - "3306"
       - "33060"
@@ -25,9 +25,9 @@ services:
     hostname: php
     image: php:uvdesk
     container_name: php
-    networks:
-      static-network:
-        ipv4_address: 172.20.0.3
+    #networks:
+     # static-network:
+      #  ipv4_address: 172.20.0.3
     expose:
       - "9000"
     volumes:
@@ -38,17 +38,17 @@ services:
       dockerfile: Dockerfile_nginx_uvdesk
     image: nginx:uvdesk
     container_name: nginx
-    networks:
-      static-network:
-        ipv4_address: 172.20.0.4
+    #networks:
+     # static-network:
+      #  ipv4_address: 172.20.0.4
     ports:
       #- "443:443"
       - "80:80"
     volumes:
       - "./nginx/certs:/etc/nginx/certs"
       - "./uvdesk-community-v1.0.14:/var/www:ro"
-networks:
-  static-network:
-    ipam:
-      config:
-        - subnet: "172.20.0.0/24"
+#networks:
+#  static-network:
+ #   ipam:
+ #     config:
+  #      - subnet: "172.20.0.0/24"
