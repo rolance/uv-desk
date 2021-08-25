@@ -9,5 +9,3 @@
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args: ['run', 'deploy', 'uvdesk-service', '--image', 'gcr.io/uvdesk-project/us-central1-docker.pkg.dev/uvdesck-roject/uvdesk-docker-repo/uvdesk-image', '--region', 'us-central1']
-    images:
-    - gcr.io/uvdesk-projectD/ 'us-central1-docker.pkg.dev/uvdesck-roject/uvdesk-docker-repo/uvdesk-image'
