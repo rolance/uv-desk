@@ -2,10 +2,3 @@
   # 0 running docker-compose
   - name: 'docker/compose:1.26.2'
     args: ['up', '-d']
-  # 1 Push the container image to Container Registry
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/uvdesk-project/us-central1-docker.pkg.dev/uvdesk-project/uvdesk-docker-repo/uvdesk-image']
-  # 2 Deploy container image to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: ['run', 'deploy', 'uvdesk-service', '--image', 'gcr.io/uvdesk-project/us-central1-docker.pkg.dev/uvdesk-roject/uvdesk-docker-repo/uvdesk-image',  '--region', 'us-central1']
