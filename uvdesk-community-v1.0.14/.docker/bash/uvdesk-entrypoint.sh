@@ -47,11 +47,11 @@ fi
 
 exec "$@"
 
-fuser -k 80/tcp
-fuser -k 443/tcp
-fuser -k 0.0.0.0:443/tcp
-fuser -k 0.0.0.0:80/tcp
+#fuser -k 80/tcp
+#fuser -k 443/tcp
+#fuser -k 0.0.0.0:443/tcp
+#fuser -k 0.0.0.0:80/tcp
 
-sudo service nginx stop
+#sudo service nginx stop
 
-docker start nginx
+#docker start nginx
